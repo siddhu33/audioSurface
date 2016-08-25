@@ -50,17 +50,17 @@ def main():
     memory = 5
     interval = 60
     if len(sys.argv) < 2:
-        print "USAGE - needs an input file argument"
+        print("USAGE - needs an input file argument")
         return
     fname = sys.argv[1]
-    print fname
+    print(fname)
     if fname.lower().endswith('.wav') == False:
-        print "file needs to be of a .wav format"
+        print("file needs to be of a .wav format")
         return
     #Once filename is correctly obtained, obtain samples and sample rate.
     rate, samples = scio.read(fname)
     s = np.shape(samples)
-    print "Sample Rate: {0}Hz, Samples : {1}".format(rate,s)
+    print("Sample Rate: {0}Hz, Samples : {1}".format(rate,s))
     r = np.arange(0,s[0],rate)
     #samp is the number of samples in the analysis frame. Has to be smaller than rate.
     samp = 512
