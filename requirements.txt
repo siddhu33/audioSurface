@@ -3,3 +3,4 @@ scipy
 matplotlib
 mpl_toolkits
 itertools
+sounddevice
