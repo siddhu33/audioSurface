@@ -4,3 +4,4 @@ matplotlib
 mpl_toolkits
 itertools
 sounddevice
+pygame
