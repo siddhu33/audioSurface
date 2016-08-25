@@ -14,6 +14,10 @@ import itertools
 from collections import deque
 
 class songSurface:
+
+    # Use ``__slots__`` for tuple-like access speed.
+    __slots__ = ['x', 'y', 'z', 'count']    
+    
     def __init__(self,length):
         self.x = deque(maxlen=length)
         self.y = deque(maxlen=length)
