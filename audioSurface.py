@@ -58,9 +58,10 @@ def main():
         return
     fname = sys.argv[1]
     print(fname)
-    if fname.lower().endswith('.wav') == False:
+    if not fname.lower().endswith('.wav'):
         print("file needs to be of a .wav format")
         return
+    
     #Once filename is correctly obtained, obtain samples and sample rate.
     rate, samples = scio.read(fname)
     s = np.shape(samples)
@@ -70,6 +71,7 @@ def main():
     samp = 512
     bins = 1
     count = 0
+    
     fig = plt.figure(1)
     fig.set_size_inches(14.4, 10.8)
     ax = Axes3D(fig)
@@ -77,10 +79,11 @@ def main():
     ax.set_ylabel('Time (s)')
     ax.set_zlim(-10.0,80,0)
     ax.set_zlabel('Volume (dB)')
+    
     i = 0
     sl0 = samples[i:i+samp,0]
     sl0 = np.multiply(np.hamming(len(sl0)),sl0)
-    freq0 = (abs(np.fft.fft(sl0)))
+    freq0 = abs(np.fft.fft(sl0))
     if bins > 1:
         freq0 = [np.mean(j) for j in np.split(freq0,samp/bins)]
     x0 = np.arange(-rate/2,rate/2,rate/len(freq0))[0:len(freq0)]
