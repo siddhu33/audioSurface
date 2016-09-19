@@ -5,7 +5,7 @@ Computes a frequency spectrum of a particular ".wav" file, and draws it out samp
 ##Installation
 ```
 pip install -r requirements.txt
-python audio\_surface.py [Filename]
+python audio_surface.py [Filename]
 ```
 
 Remember, the file name has to be a .wav file!
