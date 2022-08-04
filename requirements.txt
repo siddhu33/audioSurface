@@ -1,5 +1,6 @@
-numpy
-scipy
+itertools
 matplotlib
 mpl_toolkits
-itertools
+numpy
+pygame
+scipy
